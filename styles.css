@@ -1,0 +1,41 @@
+body {
+    user-select: none; 
+}
+
+
+.mainContainer {
+    width: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    margin: 100px, auto;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 98vmin;
+    height: 98vmin;
+    padding: 0;
+}
+
+button {
+    background-color: white;
+    border: 1px solid rgb(155, 155, 155);
+    border-radius: 0px;
+    margin: -1px;
+    font-size: 7vmin;
+    color:rgb(51, 51, 51);
+    font-family:'Courier New', Courier, monospace;
+}
+
+button:hover {
+    background-color: white;
+}
+.wrongButton:active {
+    background-color: lightsalmon;
+}
+
+.trueButton:active {
+    background-color: lime;
+}
