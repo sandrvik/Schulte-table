@@ -1,21 +1,15 @@
-let size = 6;
+let size = 5;
 
 function shuffle(array) {
     let i = array.length,
-        j = 0/* ,
-        temp */;
+        j = 0;
 
     while (i--) {
 
         j = Math.floor(Math.random() * (i + 1));
-        [array[i],array[j]] = [array[j],array[i]]
 
         // swap randomly chosen element with current element
-       
-        /* temp = array[i];
-        array[i] = array[j];
-        array[j] = temp; */
-
+        [array[i],array[j]] = [array[j],array[i]];
     }
 
     return array;
