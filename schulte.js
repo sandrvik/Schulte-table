@@ -29,7 +29,7 @@ function createArr(s) {
 let container = document.querySelector('.container');
 for (let i = 0; i < Math.pow(size, 2); i++) {
     let button = document.createElement('button');
-    button.classList.add('wrongButton');
+    button.classList.add('button','wrongButton');
     button.style.width = 98/size +'vmin';
     button.style.height = 98/size +'vmin';
     container.append(button);
