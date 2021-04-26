@@ -24,6 +24,14 @@ function createArr(s) {
     return arr;
 }
 
+let startTime, endTime;
+
+document.querySelector('.startButton').addEventListener('click', function(){
+    document.querySelector('.mainContainer').classList.remove('hidden');
+    document.querySelector('.initialContainer').classList.add('hidden');
+    startTime = new Date().getTime();
+})
+
 
 // Style and create the table
 let container = document.querySelector('.container');
@@ -50,7 +58,12 @@ buttons.forEach((button, index) => button.addEventListener('click', function() {
                                                                     if (buttons[index+1]) {
                                                                         buttons[index+1].classList.add('trueButton');
                                                                         setTimeout(removeTrueButtonStyle,150);
-                                                                    } else { setTimeout(removeTrueButtonStyle,150); console.log('win');}
-                                                                    
+                                                                    } else {
+                                                                            endTime = new Date().getTime(); 
+                                                                            setTimeout(removeTrueButtonStyle,150);
+                                                                            let resultTime = ((endTime - startTime)/1000).toFixed(1);
+                                                                            document.querySelector('.mainContainer').classList.add('hidden');
+                                                                            document.querySelector('.startButton').textContent = `${resultTime} sec`;
+                                                                            document.querySelector('.initialContainer').classList.remove('hidden');}
                                                                 }
                                                                 }))
