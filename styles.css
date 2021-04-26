@@ -29,12 +29,11 @@ button {
     font-family:'Courier New', Courier, monospace;
 }
 
-button:hover {
-    background-color: white;
-}
+
 .wrongButton:active {
-    background-color: lightsalmon;
+    background-color: crimson;
 }
+
 
 .trueButton:active {
     background-color: lime;

@@ -29,7 +29,7 @@ function createArr(s) {
 let container = document.querySelector('.container');
 for (let i = 0; i < Math.pow(size, 2); i++) {
     let button = document.createElement('button');
-    button.classList.add('button', 'wrongButton');
+    button.classList.add('wrongButton');
     button.style.width = 98/size +'vmin';
     button.style.height = 98/size +'vmin';
     container.append(button);
@@ -38,18 +38,19 @@ for (let i = 0; i < Math.pow(size, 2); i++) {
 //Create an array and fill the buttons
 let arr = createArr(size);
 let shuffledArr = shuffle([...arr]);
-let buttons = Array.from(document.querySelectorAll('.button'));
+let buttons = Array.from(document.querySelectorAll('.wrongButton'));
 buttons.forEach((button, index) => button.textContent = shuffledArr[index].toString());
 
 buttons.sort((a,b) => +(a.textContent) - +(b.textContent));
-buttons[0].classList.add('button', 'trueButton');
+buttons[0].classList.add('trueButton');
 buttons.forEach((button, index) => button.addEventListener('click', function() {
+                                                                let removeTrueButtonStyle = function() {button.classList.remove('trueButton');};
                                                                 if (+button.textContent === arr[0]) {
                                                                     arr.shift();
                                                                     if (buttons[index+1]) {
                                                                         buttons[index+1].classList.add('trueButton');
-                                                                        button.classList.remove('trueButton');
-                                                                    } else { button.classList.remove('trueButton'); console.log('win');}
+                                                                        setTimeout(removeTrueButtonStyle,150);
+                                                                    } else { setTimeout(removeTrueButtonStyle,150); console.log('win');}
                                                                     
                                                                 }
                                                                 }))
