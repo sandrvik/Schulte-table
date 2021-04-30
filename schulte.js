@@ -6,6 +6,14 @@ let arr, shuffledArr;
 
 let result;
 
+let resultTime;
+
+function makeResult() {
+    result = document.createElement('div');
+    result.className = "result";
+    result.textContent = `${resultTime} sec`;
+}
+
 // Get radio buttons and add listener for each
 let difficulties = document.getElementsByName('difficulty');
 difficulties.forEach(difficulty => {
@@ -54,7 +62,7 @@ function createTable() {
         button.style.width = 98 / size + 'vmin';
         button.style.height = 98 / size + 'vmin';
         container.append(button);
-    };
+    }
 
     //Create an array and fill the buttons
     arr = createArr(size);
@@ -74,15 +82,10 @@ function createTable() {
             } else {
                 endTime = new Date().getTime();
                 setTimeout(removeTrueButtonStyle, 150);
-                let resultTime = ((endTime - startTime) / 1000).toFixed(1);
+                resultTime = ((endTime - startTime) / 1000).toFixed(1);
                 document.querySelector('.mainContainer').classList.add('hidden');
                 container.innerHTML = ""; //clear all buttons
-                document.querySelector('.startButton').textContent = "RESTART";
-                function makeResult() {
-                    result = document.createElement('div');
-                    result.className = "result";
-                    result.textContent = `${resultTime} sec`;
-                };
+                document.querySelector('.startButton').textContent = "RESTART";              
                 result ? result.textContent = `${resultTime} sec` : makeResult();
                 document.querySelector('.initialContainer').classList.remove('hidden');
                 document.querySelector('.buttonContainer').prepend(result);
