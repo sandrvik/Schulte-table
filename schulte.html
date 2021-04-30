@@ -10,9 +10,30 @@
 </head>
 
 <body>
-    <div class="initialContainer"><button class="startButton">START</button></div>
+    <div class="initialContainer">
+        <header>
+            <p>Difficulty:</p>
+            <div class="radioButtons">
+                <div class="diffButton">
+                    <input type="radio" name="difficulty" id="diff4" value="4"> <label for="diff4">4</label>
+                </div>
+                <div class="diffButton">
+                    <input type="radio" name="difficulty" id="diff5" value="5" checked> <label for="diff5">5</label>
+                </div>
+                <div class="diffButton">
+                    <input type="radio" name="difficulty" id="diff6" value="6"> <label for="diff6">6</label>
+                </div>
+                <div class="diffButton">
+                    <input type="radio" name="difficulty" id="diff7" value="7"> <label for="diff7">7</label>
+                </div>
+            </div>
+        </header>
+        <div class="buttonContainer">
+            <button class="startButton">START</button>
+        </div>
+    </div>
     <div class="mainContainer hidden">
-    <div class="container"></div>
+        <div class="container"></div>
     </div>
 </body>
 <script src="schulte.js"></script>
