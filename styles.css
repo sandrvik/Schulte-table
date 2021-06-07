@@ -9,7 +9,7 @@ button {
     color: white;
 }
 
-.initialContainer {
+.schulteContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -95,7 +95,7 @@ header {
     padding: 0;
 }
 
-.button {
+.cell {
     background-color: white;
     border: 1px solid rgb(155, 155, 155);
     border-radius: 0px;
@@ -106,11 +106,11 @@ header {
 }
 
 
-.wrongButton:active {
+.cell:active {
     background-color: crimson;
 }
 
 
-.trueButton:active {
+.trueCell:active {
     background-color: lime;
 }
